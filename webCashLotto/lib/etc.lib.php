@@ -1,0 +1,84 @@
+<?
+
+// 디버깅 상수
+define('_DEBUGLOG_', true); //
+$g4['debug_device']          = "android";
+// $g4['debug_device']          = "browser";
+
+
+// 로그를 파일에 쓴다
+function write_log($file, $log) {
+	$fp = fopen($file, "a+");
+	ob_start();
+	print_r($log);
+	$msg = ob_get_contents();
+	ob_end_clean();
+	fwrite($fp, $msg);
+	fclose($fp);
+}
+
+// 디버깅 상수 설정시 출력
+function debug_log($log) {
+	if (defined('_DEBUGLOG_') && _DEBUGLOG_)
+	{
+		if ($g4['debug_device'] == "browser")
+			$log = "log >> " . $log . "<br/>";
+		else
+			$log = "log >> " . $log . "\r\n";
+			
+		echo $log;
+	}
+}
+
+
+// 파라미터 타당성 검사
+// base_val - value가 없을 경우 기본값
+// required - 필수여부(true || false)
+// __EXPRESSION__ - 정규식(해당 정규식에 일치할 것[preg style])
+// len - 길이(int -> 반드시 일치, array(int1, int2) -> int1에서 int2사이 길이일것)
+
+function param_check(&$key, $base_val = false, $required = false, $__EXPRESSION__ = false, $len = false)
+{
+	// 필수 체크
+	if($required !== false) {
+		if(empty($key))
+			return false;
+	}
+
+	// 길이 체크
+	if(is_array($len)) { // 배열($len[0]에서 $len[1]사이)
+		if((strlen($key) < $len[0] || strlen($key) > $len[1]) && $key)
+			return FALSE;
+	} else if($len !== false) { // 길이(반드시 $len 이어야함)
+		if(strlen($key) != $len && $key !== false)
+			return false;
+	}
+
+	// 정규식 체크
+	if($__EXPRESSION__ !== false) {
+		if(!preg_match($__EXPRESSION__, $key) && $key !== false)
+			return false;	
+	}
+
+	// 기본값 대입
+	if ($base_val !== false)
+	{
+		if (empty($key)) {
+			$key = $base_val;
+		}
+		else if (is_null($key)) {
+			$key = $base_val;
+		}
+	}
+
+	return true;
+}
+
+function convertMicrotimeToDate($time)
+{
+	$micro_time=sprintf("%06d", ($time - floor($time)) * 1000000);
+	$date = new DateTime( date('Y-m-d H:i:s.'.$micro_time, $time) );
+	return sprintf("%s", $date->format("Y-m-d H:i:s.u"));
+}
+
+?>

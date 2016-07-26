@@ -1,0 +1,746 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+
+<html lang="ko">
+  <head>
+    <title>Event Board</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"24b16f0470","applicationID":"4375101","transactionName":"dQ1ZERYKXg1UQksEF1MMQzoGClMTVW8FExVfAVsAF0pfDlNZCAQ+XwxTABw=","queueTime":0,"applicationTime":34,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o?o:n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(e,n){function t(e){function n(n,t,a){e&&e(n,t,a),a||(a={});for(var u=c(n),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=e("gos");n.exports=t()},{gos:"7eSDFh"}],ee:[function(e,n){n.exports=e("QJf3ax")},{}],3:[function(e,n){function t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var r=e("handle"),o=e(1),i=e(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(e,n){window.NREUM[n]=t("api-"+n)}),n.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],"7eSDFh":[function(e,n){function t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],gos:[function(e,n){n.exports=e("7eSDFh")},{}],handle:[function(e,n){n.exports=e("D5DuLP")},{}],D5DuLP:[function(e,n){function t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):(o[e]||(o[e]=[]),void o[e].push(n))}var r=e("ee").create(),o={};n.exports=t,t.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(e,n){n.exports=e("XL7HBI")},{}],XL7HBI:[function(e,n){function t(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:i(e,o,function(){return r++})}var r=1,o="nr@id",i=e("gos");n.exports=t},{gos:"7eSDFh"}],G9z0Bl:[function(e,n){function t(){var e=d.info=NREUM.info,n=f.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&n){c(p,function(n,t){n in e||(e[n]=t)});var t="https"===s.split(":")[0]||e.sslForHttp;d.proto=t?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=e("handle"),c=e(1),u=(e(2),window),f=u.document,s=(""+location).split("?")[0],p={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),u.addEventListener("load",t,!1)):(f.attachEvent("onreadystatechange",r),u.attachEvent("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],loader:[function(e,n){n.exports=e("G9z0Bl")},{}],12:[function(e,n){function t(e,n){var t=[],o="",i=0;for(o in e)r.call(e,o)&&(t[i]=n(o,e[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function t(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=t},{}]},{},["G9z0Bl"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="stylesheet" href="http://akamai-cdn.cashslide.kr/jquery.mobile-1.3.1.abs.min.css" />
+    <script src="http://akamai-cdn.cashslide.kr/jquery-1.9.1.nbt.min.js"></script>
+    <script src="http://akamai-cdn.cashslide.kr/jquery.mobile-1.3.1.min.js"></script>
+    <script>
+      window.nbt = window.nbt || {}
+      
+      nbt.closeWindow = function() {
+        try {
+          SharedWebView.closeActivity();
+        }
+        catch (err) {
+          window.close();
+        }
+      };
+      nbt.goArticleId = function(articleId) {
+        window.location.href = '/event_board/' + articleId + '?origin=9644440c754e7fbdd01a7e3d1542874c'; 
+      }
+      nbt.loadMore = function() {
+        var ajaxUrl = '/event_board/more';
+        var ajaxParams = {last_list_order: nbt.last_list_order, last_created_at: nbt.last_created_at, nickname: 'testme9001', key: '9644440c754e7fbdd01a7e3d1542874c'};
+        $.ajax({
+          url : ajaxUrl,
+          type : 'POST',
+          data : ajaxParams,
+          timeout: 30000,
+          success : function(data) {
+            console.log(data);
+            if (data == 'no more articles') {
+              $('#article-more-title-box').css({'display': 'none'});
+              $('#popup-no-more-notice').popup('open', {transition: 'fade', positionTo: 'window'});
+              setTimeout(function(){$('#popup-no-more-notice').popup('close', {transition: 'fade'});},2000);
+            }
+            else if (data == 'user not found') {
+              $('#popup-connection-failed').popup('open', {transition: 'fade', positionTo: 'window'});
+              setTimeout(function(){$('#popup-connection-failed').popup('close', {transition: 'fade'});},2000);
+            }
+            else {
+              for(var i = 0; i < data.length; i++) {
+                var article = data[i];
+                if (nbt.idList.indexOf(article.id + '') == -1) {
+                  var article_html = '\
+                   <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId(\'' + article.id + '\')" >\
+                    <img data-role="none" src="' + article.thumbnail_url + '" class="article-title-image-box" / >\
+                    <div data-role="none" class="article-title-text-box">\
+                      <div data-role="none" class="title">\
+                        ' + article.title + '\
+                      </div>\
+                      <div data-role="none" class="article-date">\
+                        <div data-role="none" class="icon"></div>\
+                        <span>\
+                          ' + article.created_at_formatted + ' - ' + article.expire_date_formatted + ' \
+                        </span> \
+                      </div><br />\
+                      <div data-role="none" class="replies-count">\
+                        <div data-role="none" class="icon"></div><span>' + article.comment_count + '</span>\
+                      </div>\
+                    </div>\
+                  </a>'
+                  $('#event-board-list-box').append(article_html);
+                  nbt.idList.push(article.id + '');
+                }
+              }
+              nbt.last_list_order = data[data.length - 1].list_order;
+              nbt.last_created_at = data[data.length - 1].created_at;
+              if (data.length < 20) {
+                $('#article-more-title-box').css({'display': 'none'});
+              }
+              nbt.scalePage();
+            }
+          },
+          error : function() {
+            $('#popup-connection-failed').popup('open', {transition: 'fade', positionTo: 'window'});
+            setTimeout(function(){$('#popup-connection-failed').popup('close', {transition: 'fade'});},2000);
+          }
+        });
+      }
+      nbt.scalePage = function() {
+        var swidth = $(window).width();
+        $('.article-title-text-box').css({
+          'width': swidth - 135 - 12 + 'px'
+        });
+        $('.article-title-text-box .title').each(function() {
+          if ($(this).height() > 75) {
+            $(this).parent().css({
+              'position': 'relative',
+              'top': '0',
+              '-webkit-transform': 'none',
+              'transform': 'none',
+              'margin-top': '4px',
+              'margin-bottom': '4px'
+            })
+          }
+        });
+      };
+      nbt.getCashslideVersion = function() {
+        try {
+          return SharedWebView.getAppVersion();
+        }
+        catch (err) {
+          return '0.0'
+        }
+      };
+      nbt.replaceHeader = function() {
+        // if (parseFloat(nbt.getCashslideVersion()) >= 6.4) {
+        //   $('.event-board-list-header').css({
+        //     'background-image': 'none',
+        //     'background-color': '#E7E7E7',
+        //     'color': '#8C8C8C',
+        //     'border-bottom': '1px solid #E7E7E7'  
+        //   });
+        //   $('.event-board-list-header-arrow').css({
+        //     'background-image': 'url(http://akamai-cdn.cashslide.kr/renew_v7_btn_back.png)'
+        //   });
+        // }
+      };
+      nbt.initList = function() {
+          nbt.last_list_order = '1';
+          nbt.last_created_at = '2015-04-21 20:22:43 +0900';
+          nbt.idList = ['1000215','1000214','1000213','1000212','1000211','1000210','1000209','1000208','1000207','1000206','1000205','1000204','1000203','1000202','1000201','1000200','1000199','1000198','1000197','1000196'];
+      };
+      $(document).ready(function () {
+        nbt.scalePage();
+        nbt.replaceHeader();
+        nbt.initList();
+      });
+    </script>
+    <style>
+      @charset "utf-8";
+      body {
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        background-color: white;
+        overflow-x: hidden;
+        text-decoration: none;
+      }
+      .no-display {
+        display: none;
+      }
+      .no-margin {
+        margin: 0 0 0 0;
+      }
+      .no-padding {
+        padding: 0 0 0 0;
+      }
+      .no-padding-top {
+        padding-top: 0;
+      }
+      
+      #event-board-list-page {
+        background-image: none;
+        background-color: #ffffff;
+        border: none;
+      }
+      .event-board-list-header {
+        background-image: none !important;
+        background-color: #222222 !important;
+        background-size: 100% 100%;
+        height: 48px;
+      }
+      .event-board-list-header-arrow {
+        display: block;
+        position: absolute;
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_btn_topbar_n.png');
+        background-size: 100% 100%;
+        left: 12px;
+        top: 15px;
+        height: 18px;
+        width: 10.5px;
+      }
+      .event-board-list-header-arrow:hover {
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_btn_topbar_s.png');
+      }
+      .event-board-list-back-title {
+        display: block;
+        position: absolute;
+        text-align: left !important;
+        text-shadow: none;
+        font-size: 16px;
+        font-weight: normal !important;
+        left: 28.5px;
+        top: 14px;
+        color: #A4A4A4;
+      }
+      .event-board-list-title {
+        /*text-align: left !important;*/
+        text-shadow: none;
+        font-size: 18px !important;
+        font-weight: normal !important;
+        /*margin-left: 35px !important;*/
+        margin-top: 12px !important;
+        color: #FFFFFF;
+      }
+      
+      #event-board-list-content {
+        border: none;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+      }
+      .article-title-box {
+        display: block;
+        position: relative;
+        height: auto;
+        min-height: 136px;
+        background-color: #FFFFFF;
+        background-image: none;
+
+          border-bottom: 1px solid #ededed;
+        text-decoration: none;
+        overflow: auto;
+      }
+      .article-title-box:hover {
+        background-color: #F1F2F1;
+      }
+      #article-more-title-box {
+        display: block;
+        position: relative;
+        height: 60px;
+        background-color: #F2F2F2;
+        background-image: none;
+        border-top: 1px solid #CBCBCB;
+        text-align: center;
+        border-bottom: 2px solid #CBCBCB;
+        text-decoration: none;
+      } 
+      #article-more-title-box:hover {
+        /*background-color: #fcd900;*/
+      }
+      .article-title-image-box {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+          bottom: 12px;
+          right: 12px;
+        height: 113px;
+        width: 113px;
+      }
+      .article-title-expiration-box {
+        position: absolute;
+        left: 135px;
+        top: 14px;
+        color: #fdbe3d;
+        text-shadow: none;
+        font-size: 11px;
+      }
+      .article-title-text-box {
+        display: block;
+        position: absolute;
+        margin-left: 135px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: #4D4D4D;
+        text-shadow: none;
+        overflow: auto;
+      }
+      .article-title-text-box .title {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        line-height: 20px;
+        /*max-height: 60px;*/
+      }
+      .article-comment-count {
+        font-size: 14px;
+        color: #fccc6c;
+      }
+      .article-title-text-box .article-date {
+        display: block;
+        margin-top: 4px;
+        font-size: 13px;
+        color: #9A9A9A;
+      }
+      .article-title-text-box .article-date .icon {
+        display: block;
+        float: left;
+        background-color: none;
+        background-size: 100% 100%;
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_brd_clock.png');
+        height: 13px;
+        width: 13px;
+          margin-top: 0px;
+        margin-right: 4px;
+      }
+      .article-title-text-box .article-date span {
+        display: block;
+        float: left;
+        font-size: 13px;
+        color: #9A9A9A;
+        margin-top: 0px;
+        /*padding-top: 1px;*/
+        padding-top: 0px;
+      }
+      .article-title-text-box .replies-count {
+        display: block;
+        font-size: 13px;
+        color: #FD682E;
+        margin-top: 8px;
+        overflow: auto;
+      }
+      .article-title-text-box .replies-count .icon {
+        display: block;
+        float: left;
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_icon_reply_b.png');
+        background-size: 100% 100%;
+        width: 12px;
+        height: 12px;
+        margin-right: 4px;
+          margin-top: 0px;
+      }
+      .article-title-text-box .replies-count span {
+        display: block;
+        float: left;
+        margin-top: 0px;
+      }
+      .article-expiration-date {
+        font-size: 11px;
+        font-weight: bold;
+        color: #ff9900;
+      }
+      .article-title-detail-box {
+        position: absolute;
+        left: 135px;
+        top: 97px;
+        color: #cacaca;
+        text-shadow: none;
+        font-size: 11px;
+      }
+      .article-title-icon {
+        position: absolute;
+        left: 190px;
+        top: 88px;
+        height: 30px;
+        width: 30px;
+        background: url('http://akamai-cdn.cashslide.kr/notice_title_icon_arrow_right.png') no-repeat;
+        background-size: 100% 100%;
+      }
+      .article-more-title-text-box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+      }
+      .article-more-title {
+        width: 100%;
+        text-align: center;
+        color: #9A9A9A;
+        text-shadow: none;
+        font-size: 14px;
+      }
+      .close-button {
+        display: absolute;
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_btn_topclose_n.png');
+        background-size: 100% 100%;
+        width: 17px !important;
+        height: 17px !important;
+        left: auto !important;
+        right: 16px !important;
+        top: 15.5px !important;
+      }
+      .close-button:hover {
+        background-image: url('http://akamai-cdn.cashslide.kr/comm_sys_fl_btn_topclose_s.png');
+      }
+    </style>
+  </head>
+  <body>
+    <div data-role="page" id="event-board-list-page">
+      <div data-role="header" data-position="fixed" data-tap-toggle="false" class="event-board-list-header no-margin no-padding">
+        <!--div class="event-board-list-header-arrow" onClick="nbt.closeWindow();"></div>
+        <div class="godo-font event-board-list-back-title" onClick="nbt.closeWindow();">이전</div-->
+        <h1 class="event-board-list-title">이벤트</h1>
+        <a href="#" data-role="none" class="close-button" onClick="nbt.closeWindow();"></a>
+      </div>
+      <div data-role="content" id="event-board-list-content" class="no-margin no-padding-top">
+        <div data-role="none" id="event-board-list-box">
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000215')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_야구장_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                롯데자이언츠 홈 경기 커플석을 쏜다!&nbsp;
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.05.04 - 2015.05.06
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>87</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000214')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_0504어버이날_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [이벤트] 캐시슬라이드가 <b><font color="#660000">어버이날 선물</font></b> 쏜다!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.05.04 - 2015.05.07
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>1800</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000213')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_%EC%96%B4%EB%A6%B0%EC%8B%A0%EB%B6%80_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자 발표]</b> 연극 &lt;어린 신부&gt; <font color="#cc0000">무료 초대권</font> 증정 이벤트!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.05.01 - 2015.05.01
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>50</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000212')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_선글라스_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자발표]</b> 캐슬러는 케슬러지~! 캐슬러에게 케슬러선글라스 쏜다!!<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.30 - 2015.04.30
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>139</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000211')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_0424_직장인_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [당첨자 발표]&nbsp;<span style="font-weight: 700;"><font color="#cc3300">근로자의 날</font></span>에도 출근하는 당신에게&nbsp;<span style="font-weight: 700;"><font color="#009900">아메리카노&nbsp;</font></span>쏜다!<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.29 - 2015.04.29
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>79</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000210')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_동영상퀴즈2_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [종료] 퀴즈 맞추고 동영상 속 상품 받자!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.29 - 2015.05.05
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>8313</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000209')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_러브액츄얼리226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자 발표]</b> 연극 &lt;러브 액츄얼리 - 대학로&gt; <font color="#cc0000">무료초대권</font> 증정 이벤트
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.28 - 2015.04.28
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>39</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000208')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_어린신부_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[문화 혜택]</b> 연극 &lt;어린 신부&gt; <font color="#cc0000">무료초대권</font> 증정 이벤트!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.30
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>143</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000207')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_옥탑방_0226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자 발표]</b> 연극 &lt;옥탑방 고양이&gt; <font color="#cc0000">무료초대권</font> 및 할인 쿠폰을 드립니다!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.27
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>32</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000206')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_연괜_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자 발표][대구]</b> 연극 &lt;연애해도 괜찮아&gt; 무료초대권 증정 이벤트!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.27
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>20</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000205')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_브라보_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[당첨자 발표]</b> 연극 &lt;브라보 마이 라이프&gt; <font color="#cc0000">무료 초대권</font> 증정 이벤트
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.27
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>19</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000204')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_0424_직장인_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [종료] <b><font color="#cc3300">근로자의 날</font></b>에도 출근하는 당신에게 <b><font color="#009900">아메리카노 </font></b>쏜다!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.29
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>4703</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000203')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_개편알림_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [종료] 쉽고 빨라진 캐시슬라이드! <b><font color="#003399">업데이트</font>하고 <font color="#006600">적립금</font> 받자!</b><br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.27 - 2015.04.27
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>10279</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000202')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_선글라스_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                캐슬러는 케슬러지~! 캐슬러에게 케슬러선글라스 쏜다!!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.24 - 2015.04.29
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>6629</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000201')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_loveactually150424_thumb.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <b>[문화혜택]</b> 연극 &lt;러브 액츄얼리&gt; <font color="#cc0000">무료 초대권</font><font color="#660000"> </font><font color="#cc0000">증정</font> 이벤트<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.24 - 2015.04.27
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>147</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000200')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_FGI_740 (1).jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <span style="font-weight: 700;">[당첨자발표]</span>&nbsp;제 8차 캐시슬라이드 소비자집단조사(FGI) 최종대상자를 발표합니다<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.24 - 2015.04.24
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>62</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000199')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_로빈훗2_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                <span style="font-weight: 700;">[당첨자발표]</span>&nbsp;뮤지컬&nbsp;<span style="font-weight: 700;">&lt;로빈훗&gt;</span>에 캐슬러를 초대합니다!!<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.22 - 2015.04.22
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>47</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000198')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_파리넬리_226(수정).jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [당첨자 발표] 뮤지컬 &lt;파리넬리&gt; <font color="#cc0000">무료 초대권 증정</font> 이벤트
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.22 - 2015.04.22
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>35</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000197')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_연괜_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [문화혜택]<b>[대구]</b>연극 &lt;연애해도 괜찮아&gt; <font color="#cc0000">무료초대권</font>과 <font color="#cc0000">할인 쿠폰</font>을 드립니다!<br>
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.21 - 2015.04.24
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>42</span>
+              </div>
+            </div>
+          </a>
+          <a data-role="none" class="article-title-box" href="#" onClick="nbt.goArticleId('1000196')" >
+            <img data-role="none" src="http://akamai-cdn.cashslide.kr/evtbd_thumb_img_브라보_226.jpg" class="article-title-image-box" / >
+            <div data-role="none" class="article-title-text-box">
+              <div data-role="none" class="title">
+                [문화혜택] 연극 &lt;브라보! 마이 라이프&gt; <font color="#003399">무료초대권</font>과 <font color="#003399">할인쿠폰</font> 쏜다!
+              </div>
+              <div data-role="none" class="article-date">
+                <div data-role="none" class="icon"></div>
+                <span>
+                  2015.04.21 - 2015.04.24
+                </span>
+              </div><br />
+              <div data-role="none" class="replies-count">
+                <div data-role="none" class="icon"></div><span>67</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <a data-role="none" id="article-more-title-box" href="#" onClick="nbt.loadMore()" >
+          <div data-role="none" class="article-more-title-text-box">
+            <span data-role="none" class="article-more-title">
+              더보기
+            </span>
+          </div>
+        </a>
+      </div>
+      <div data-role="popup" data-theme="a" id="popup-no-more-notice">
+        <p>목록의 끝입니다.</p>
+      </div>
+      <div data-role="popup" data-theme="a" id="popup-connection-failed">
+        <p>서버와의 연결에 실패했습니다.</p>
+      </div>
+    </div>
+  </body>
+</html>

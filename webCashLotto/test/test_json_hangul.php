@@ -1,0 +1,4 @@
+<?php
+header("Content-Type: text/html; charset=UTF-8");
+echo '{"request":"query_region_sigungu","version":"cashlotto v.1.0","totalcount":25,"querystate":"success","msg":"","datalist":[{"db_sigungu":"강남구"},{"db_sigungu":"강동구"},{"db_sigungu":"강북구"},{"db_sigungu":"강서구"},{"db_sigungu":"관악구"},{"db_sigungu":"광진구"},{"db_sigungu":"구로구"},{"db_sigungu":"금천구"},{"db_sigungu":"노원구"},{"db_sigungu":"도봉구"},{"db_sigungu":"동대문구"},{"db_sigungu":"동작구"},{"db_sigungu":"마포구"},{"db_sigungu":"서대문구"},{"db_sigungu":"서초구"},{"db_sigungu":"성동구"},{"db_sigungu":"성북구"},{"db_sigungu":"송파구"},{"db_sigungu":"양천구"},{"db_sigungu":"영등포구"},{"db_sigungu":"용산구"},{"db_sigungu":"은평구"},{"db_sigungu":"종로구"},{"db_sigungu":"중구"},{"db_sigungu":"중랑구"}]}';
+?>
